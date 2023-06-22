@@ -10,24 +10,12 @@
         font-size: 16px;
       }
 
-      .container {
-        width: 90%;
-        max-width: 75em;
-        margin: 1.25em auto;
-        /*display: grid;
-        grid-gap: 1.25em;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: (4, auto);
-        grid-template-areas: 
-        ''
-        ;*/
-      }
-
       header {
         background-color: #333;
         color: #fff;
         padding: 1.25rem;
         text-align: center;
+        grid-area: header;
       }
 
       img {
@@ -70,6 +58,151 @@
         text-decoration: none;
       }
 
+      .container_index,
+      .container_servicios,
+      .container_propiedades,
+      .container_desarrollos,
+      .container_equipos {
+        width: 90%;
+        max-width: 75em;
+        margin: 1.25em auto;
+      }
+
+      footer {
+        background-color: #333;
+        color: #fff;
+        padding: 10px;
+        text-align: center;
+        grid-area: footer;
+      }
+
+      .container_propiedades {
+        display: grid;
+        grid-gap: 1.25em;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: (5, auto);
+        grid-template-areas: 
+        'header header header'
+        'imagen_1 casa_1 casa_1'
+        'imagen_2 casa_2 casa_2'
+        'imagen_3 casa_3 casa_3'
+        'footer footer footer';
+      }
+
+      .aside_casa1 {
+        background-color: gray;
+        padding: 0.06rem;
+        grid-area: imagen_1;
+      }
+
+      .aside_casa2 {
+        background-color: gray;
+        padding: 10px;
+        grid-area: imagen_2;
+      }
+
+      .aside_casa3 {
+        background-color: gray;
+        padding: 10px;
+        grid-area: imagen_3;
+      }
+
+      .article_casa1 {
+        background-color: #fff;
+        padding: 20px;
+        box-shadow: 0 0px 10px rgba(0, 0, 0, 0.448);
+        grid-area: casa_1;
+      }
+
+      .article_casa2 {
+        background-color: #fff;
+        padding: 20px;
+        box-shadow: 0 0px 10px rgba(0, 0, 0, 0.448);
+        grid-area: casa_2;
+      }
+
+      .article_casa3 {
+        background-color: #fff;
+        padding: 20px;
+        box-shadow: 0 0px 10px rgba(0, 0, 0, 0.448);
+        grid-area: casa_3;
+      }
+
+      .container_desarrollos {
+        display: grid;
+        grid-gap: 1.25em;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: (4, auto);
+        grid-template-areas: 
+        'header header'
+        'img_1 seccion1'
+        'seccion2 img_2'
+        'footer footer';
+      }
+
+      .imagen_1 {
+        background-color: gray;
+        padding: 10px;
+        grid-area: img_1;
+      }
+
+      .imagen_2 {
+        background-color: gray;
+        padding: 10px;
+        grid-area: img_2;
+      }
+
+      .article_seccion1 {
+        background-color: #fff;
+        padding: 20px;
+        box-shadow: 0 0px 10px rgba(0, 0, 0, 0.448);
+        grid-area: seccion1;
+      }
+
+      .article_seccion2 {
+        background-color: #fff;
+        padding: 20px;
+        box-shadow: 0 0px 10px rgba(0, 0, 0, 0.448);
+        grid-area: seccion2;
+      }
+
+      .container_equipos {
+        display: grid;
+        grid-gap: 1.25em;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: (4, auto);
+        grid-template-areas: 
+        'header' 'section1' 'section2' 'footer';
+      }
+
+      .section1 {
+        grid-area: section1;
+      }
+
+      .section2 {
+        grid-area: section2;
+      }
+
+      .section1, .section2 {
+        background-color: #000;
+        color: #fff;
+        padding: 20px;
+        display: grid;
+        grid-gap: 1em;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: (1, auto);
+        grid-template-areas: 'team_img team_text team_text team_text';
+      }
+
+      .aside_tlahui, .aside_mada {
+        border-radius: 50%;
+        grid-area: team_img;
+      }
+
+      .article_tlahui, .article_mada {
+        grid-area: team_text;
+      }
+
       main {
         max-width: 800px;
         margin: 20px auto;
@@ -78,9 +211,6 @@
         box-shadow: 0 0px 10px rgba(0, 0, 0, 0.448);
       }
 
-      footer {
-        background-color: #333;
-        color: #fff;
-        padding: 10px;
-        text-align: center;
-      }
+
+
+
