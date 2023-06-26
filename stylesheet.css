@@ -8,6 +8,9 @@
         font-family: serif;
         background-image: repeating-linear-gradient(90deg, #fff, #fff 20px, #fbfbfb 20px, #fbfbfb 40px);
         font-size: 16px;
+        position: relative;
+        padding-bottom: 3em;
+        min-height: 100vh;
       }
 
       header {
@@ -18,13 +21,18 @@
         grid-area: header;
       }
 
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;  
+      .logo {
+        margin-bottom: 0.5em;
       }
 
-      nav {
+      .svg {
+        width: 2em;
+        height: 2em;
+        fill: white;
+      }
+
+      .nav {
+        background: #333;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -39,7 +47,8 @@
       }
 
       .nav-list li {
-        margin-right: 0.62rem;
+        font-size: 1em;
+        margin-right: 0.6rem;
         letter-spacing: 0.18rem;
         padding: .5rem;
         align-items: center;
@@ -50,7 +59,10 @@
         opacity: 0.7;
         background-color: #000;
         border-radius: 30px; 
-        
+      }
+
+      .menu_button {
+        display: none;
       }
 
       a {
@@ -64,7 +76,7 @@
       .container_desarrollos,
       .container_equipos {
         width: 90%;
-        max-width: 75em;
+        max-width: 75rem;
         margin: 1.25em auto;
       }
 
@@ -73,12 +85,101 @@
         color: #fff;
         padding: 10px;
         text-align: center;
+        flex-shrink: 0;
         grid-area: footer;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
       }
 
+      /*----------INDEX--------------*/
+      .container_index {
+        /*insertar grid-area cuando se
+        tengan los datos */
+      }
+
+      .imagenes_index {
+        background: gray;
+        display: flex;
+        width: 100%;
+        height: 12.5rem;
+      }
+      
+      .imagenes_index img {
+        height: auto;
+        width: 0px;
+        flex-grow: 1;
+        object-fit: cover;
+        opacity: .8;
+        transition: .5s ease;
+      }
+      
+      .imagenes_index img:hover {
+        width: 6.25rem;
+        opacity: 1;
+        filter: contrast(120%);
+      }
+
+      .main_index {
+        max-width: 100em;
+        margin: 1.25rem auto;
+        padding: 1.25rem;
+        background-color: #fff;
+        box-shadow: 0 0px 10px rgba(0, 0, 0, 0.448);
+      }
+
+      /*---------SERVICIOS---------*/
+      .container_servicios {
+        /*insertar grid-area cuando
+        se tengan los datos*/
+      }
+
+      .fieldset_ancla_servicios {
+        background-color: #6d6d6d;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .fieldset_ancla_servicios ul {
+        padding: 0.4rem;
+        list-style-type: none;
+        display: flex;
+      }
+
+      .fieldset_ancla_servicios li a {
+        color: #000;
+        margin-right: 0.62rem;
+        letter-spacing: 0.18rem;
+        padding: .5rem;
+        align-items: center;
+        transition: 0.2s;
+      }
+
+      .fieldset_ancla_servicios li a:hover {
+        font-size: 1.25rem;
+        color:#fff
+      }
+
+      .fieldset_contenido {
+        display:none;
+        pointer-events: none;
+      }
+
+      .administracion,
+      .desarrollos, 
+      .fliping,
+      .ventas,
+      .rentas {
+        background-color: #fff;
+        padding: 1.25rem;
+        box-shadow: 0 0px 10px rgba(0, 0, 0, 0.448);
+      }
+
+      /*----PROPIEDADES------*/
       .container_propiedades {
         display: grid;
-        grid-gap: 1.25em;
+        grid-row-gap: 1.25em;
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: (5, auto);
         grid-template-areas: 
@@ -97,82 +198,91 @@
 
       .aside_casa2 {
         background-color: gray;
-        padding: 10px;
+        padding: 0.62rem;
         grid-area: imagen_2;
       }
 
       .aside_casa3 {
         background-color: gray;
-        padding: 10px;
+        padding: 0.625rem;
         grid-area: imagen_3;
       }
 
       .article_casa1 {
         background-color: #fff;
-        padding: 20px;
+        padding: 1.25rem;
         box-shadow: 0 0px 10px rgba(0, 0, 0, 0.448);
         grid-area: casa_1;
       }
 
       .article_casa2 {
         background-color: #fff;
-        padding: 20px;
+        padding: 1.25rem;
         box-shadow: 0 0px 10px rgba(0, 0, 0, 0.448);
         grid-area: casa_2;
       }
 
       .article_casa3 {
         background-color: #fff;
-        padding: 20px;
+        padding: 1.25rem;
         box-shadow: 0 0px 10px rgba(0, 0, 0, 0.448);
         grid-area: casa_3;
       }
 
+      /*--------------DESARROLLOS-----------------*/
       .container_desarrollos {
+        display: grid;
+        grid-gap: 1.25rem;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: (4, auto);
+        grid-template-areas: 
+        'header header'
+        'section section'
+        'main main'
+        'footer footer';
+      }
+
+      .section_desarrollos {
+        background-color: #fff;
+        box-shadow: 0 0px 10px rgba(0, 0, 0, 0.448);
+        grid-area: section;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: (1, auto);
+        grid-template-areas: 
+        'img article'
+      }
+
+      .imagen_1 {
+        background-color: gray;
+        grid-area: img;
+      }
+
+      .article_seccion1 {
+        padding: 1.25em;
+        box-sizing: border-box;
+        grid-area: article;
+      }
+
+      .main_desarrollos {
+        padding: 1.25em;
+        box-sizing: border-box;
+        background-color: #fff;
+        box-shadow: 0 0px 10px rgba(0, 0, 0, 0.448);
+        grid-area: main;
+      }
+
+      /*-----------------EQUIPOS----------------*/
+      .container_equipos {
         display: grid;
         grid-gap: 1.25em;
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: (4, auto);
         grid-template-areas: 
         'header header'
-        'img_1 seccion1'
-        'seccion2 img_2'
+        'section1 section1'
+        'section2 section2'
         'footer footer';
-      }
-
-      .imagen_1 {
-        background-color: gray;
-        padding: 10px;
-        grid-area: img_1;
-      }
-
-      .imagen_2 {
-        background-color: gray;
-        padding: 10px;
-        grid-area: img_2;
-      }
-
-      .article_seccion1 {
-        background-color: #fff;
-        padding: 20px;
-        box-shadow: 0 0px 10px rgba(0, 0, 0, 0.448);
-        grid-area: seccion1;
-      }
-
-      .article_seccion2 {
-        background-color: #fff;
-        padding: 20px;
-        box-shadow: 0 0px 10px rgba(0, 0, 0, 0.448);
-        grid-area: seccion2;
-      }
-
-      .container_equipos {
-        display: grid;
-        grid-gap: 1.25em;
-        grid-template-columns: repeat(1, 1fr);
-        grid-template-rows: (4, auto);
-        grid-template-areas: 
-        'header' 'section1' 'section2' 'footer';
       }
 
       .section1 {
@@ -186,7 +296,8 @@
       .section1, .section2 {
         background-color: #000;
         color: #fff;
-        padding: 20px;
+        padding: 1.25rem;
+        box-sizing: border-box;
         display: grid;
         grid-gap: 1em;
         grid-template-columns: repeat(4, 1fr);
@@ -203,14 +314,113 @@
         grid-area: team_text;
       }
 
-      main {
-        max-width: 800px;
-        margin: 20px auto;
-        padding: 20px;
-        background-color: #fff;
-        box-shadow: 0 0px 10px rgba(0, 0, 0, 0.448);
+      /*-----------RESPONSIVE-------------*/
+      @media screen and (max-width: 900px) {
+        .nav-list li{
+          font-size: 0.75rem;
+        }
+        .imagenes_index {
+          height: 10rem;
+        }
       }
 
+      @media screen and (max-width: 768px) {
+        .logo{
+          font-size: 1.7rem;
+        }
+        .nav-list li{
+          font-size: 0.70rem;
+          letter-spacing: 0.13rem;
+        }
+      }
 
+      @media screen and (max-width: 630px) {
+        .nav-list li{
+          margin-right: 0;
+        }
+        .fieldset_ancla_servicios{
+          font-size: 0.75rem;
+        }
+      }
+
+      @media screen and (max-width: 560px) {
+        .fieldset_ancla_servicios{
+          margin-bottom: 16px;
+          flex-direction: column;
+          border: solid #000;
+        }
+        .fieldset_contenido{
+          margin-top: 10px;
+          font-size: 1.5rem;
+          display: flex;
+          pointer-events: auto;
+        }
+        .fieldset_ancla_servicios ul{
+            display: block;
+            list-style-type:disc;
+            font-size: 14px;
+        }
+        .fieldset_ancla_servicios li{
+          margin: 5px;
+        }
+      }
+
+      @media screen and (max-width:426px) {
+        /*.container_index,
+        .container_servicios,
+        .container_propiedades,
+        .container_desarrollos,
+        .container_equipos{
+          width: 100%;
+          margin: 0;
+        }*/
+        header{
+          height: 64px;
+        }
+        .logo{
+          text-align: left;
+          float: left;
+        }
+        .menu_button{
+          display: block;
+          background: transparent;
+          border-color: transparent;
+          float: right;
+          cursor: pointer;
+        }
+        .nav{
+          position: relative;
+          width: 100%;
+          height: 0;
+          pointer-events: none;
+          overflow: hidden;
+          transition: all .5s ease;
+
+          display: flex;
+          flex-flow: column nowrap;
+          justify-content: center;
+          align-items: center;
+        }
+        .nav.activo{
+          height: 50vh;
+          pointer-events: auto;
+        }
+        .nav-list{
+          border: none;
+          position: absolute;
+          justify-content: center;
+          flex-direction: column;
+          width: 60%;
+          height: 39%;
+        }
+        .nav-list li{
+          margin: 0.5rem 0;
+          font-size: 0.93rem;
+        }
+        .imagenes_index{
+          display: none;
+        }
+      }
+      
 
 
