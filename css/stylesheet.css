@@ -1,9 +1,9 @@
-      *{
+      * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
       }
-      
+
       body {
         font-family: serif;
         background-image: repeating-linear-gradient(90deg, #fff, #fff 20px, #fbfbfb 20px, #fbfbfb 40px);
@@ -58,7 +58,7 @@
       .nav-list li:hover {
         opacity: 0.7;
         background-color: #000;
-        border-radius: 30px; 
+        border-radius: 30px;
       }
 
       .menu_button {
@@ -66,7 +66,7 @@
       }
 
       a {
-        color:#fff;
+        color: #fff;
         text-decoration: none;
       }
 
@@ -76,7 +76,7 @@
       .container_desarrollos,
       .container_equipos {
         width: 90%;
-        max-width: 75rem;
+        max-width: 100rem;
         margin: 1.25em auto;
       }
 
@@ -104,7 +104,7 @@
         width: 100%;
         height: 12.5rem;
       }
-      
+
       .imagenes_index img {
         height: auto;
         width: 0px;
@@ -113,7 +113,7 @@
         opacity: .8;
         transition: .5s ease;
       }
-      
+
       .imagenes_index img:hover {
         width: 6.25rem;
         opacity: 1;
@@ -135,10 +135,9 @@
       }
 
       .fieldset_ancla_servicios {
-        background-color: #6d6d6d;
+        background-color: #b6b6b6;
         display: flex;
         justify-content: center;
-        align-items: center;
       }
 
       .fieldset_ancla_servicios ul {
@@ -158,16 +157,16 @@
 
       .fieldset_ancla_servicios li a:hover {
         font-size: 1.25rem;
-        color:#fff
+        color: #fff
       }
 
       .fieldset_contenido {
-        display:none;
+        display: none;
         pointer-events: none;
       }
 
       .administracion,
-      .desarrollos, 
+      .desarrollos,
       .fliping,
       .ventas,
       .rentas {
@@ -180,53 +179,53 @@
       .container_propiedades {
         display: grid;
         grid-row-gap: 1.25em;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         grid-template-rows: (5, auto);
-        grid-template-areas: 
-        'header header header'
-        'imagen_1 casa_1 casa_1'
-        'imagen_2 casa_2 casa_2'
-        'imagen_3 casa_3 casa_3'
-        'footer footer footer';
+        grid-template-areas:
+          'header header '
+          'section1 section1'
+          'section2 section2'
+          'section3 section3'
+          'footer footer';
       }
 
-      .aside_casa1 {
-        background-color: gray;
-        padding: 0.06rem;
-        grid-area: imagen_1;
+      .section_casa1,
+      .section_casa2,
+      .section_casa3 {
+        box-shadow: 0 0px 10px rgba(0, 0, 0, 0.448);
+        display: grid;
+        grid-row-gap: 10px;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: (1, auto);
+        grid-template-areas:
+          'aside article article';
       }
 
-      .aside_casa2 {
-        background-color: gray;
-        padding: 0.62rem;
-        grid-area: imagen_2;
+      .section_casa1 {
+        grid-area: section1;
       }
 
+      .section_casa2 {
+        grid-area: section2;
+      }
+
+      .section_casa3 {
+        grid-area: section3;
+      }
+
+      .aside_casa1,
+      .aside_casa2,
       .aside_casa3 {
         background-color: gray;
-        padding: 0.625rem;
-        grid-area: imagen_3;
+        grid-area: aside;
       }
 
-      .article_casa1 {
-        background-color: #fff;
-        padding: 1.25rem;
-        box-shadow: 0 0px 10px rgba(0, 0, 0, 0.448);
-        grid-area: casa_1;
-      }
-
-      .article_casa2 {
-        background-color: #fff;
-        padding: 1.25rem;
-        box-shadow: 0 0px 10px rgba(0, 0, 0, 0.448);
-        grid-area: casa_2;
-      }
-
+      .article_casa1,
+      .article_casa2,
       .article_casa3 {
         background-color: #fff;
         padding: 1.25rem;
-        box-shadow: 0 0px 10px rgba(0, 0, 0, 0.448);
-        grid-area: casa_3;
+        grid-area: article;
       }
 
       /*--------------DESARROLLOS-----------------*/
@@ -235,11 +234,11 @@
         grid-gap: 1.25rem;
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: (4, auto);
-        grid-template-areas: 
-        'header header'
-        'section section'
-        'main main'
-        'footer footer';
+        grid-template-areas:
+          'header header'
+          'section section'
+          'main main'
+          'footer footer';
       }
 
       .section_desarrollos {
@@ -249,8 +248,8 @@
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: (1, auto);
-        grid-template-areas: 
-        'img article'
+        grid-template-areas:
+          'img article'
       }
 
       .imagen_1 {
@@ -278,11 +277,11 @@
         grid-gap: 1.25em;
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: (4, auto);
-        grid-template-areas: 
-        'header header'
-        'section1 section1'
-        'section2 section2'
-        'footer footer';
+        grid-template-areas:
+          'header header'
+          'section1 section1'
+          'section2 section2'
+          'footer footer';
       }
 
       .section1 {
@@ -293,7 +292,8 @@
         grid-area: section2;
       }
 
-      .section1, .section2 {
+      .section1,
+      .section2 {
         background-color: #000;
         color: #fff;
         padding: 1.25rem;
@@ -302,93 +302,101 @@
         grid-gap: 1em;
         grid-template-columns: repeat(4, 1fr);
         grid-template-rows: (1, auto);
-        grid-template-areas: 'team_img team_text team_text team_text';
+        grid-template-areas:
+          'team_img team_text team_text team_text';
       }
 
-      .aside_tlahui, .aside_mada {
+      .aside_tlahui,
+      .aside_mada {
         border-radius: 50%;
         grid-area: team_img;
       }
 
-      .article_tlahui, .article_mada {
+      .article_tlahui,
+      .article_mada {
         grid-area: team_text;
       }
 
       /*-----------RESPONSIVE-------------*/
       @media screen and (max-width: 900px) {
-        .nav-list li{
+        .nav-list li {
           font-size: 0.75rem;
         }
+
         .imagenes_index {
           height: 10rem;
         }
       }
 
       @media screen and (max-width: 768px) {
-        .logo{
+        .logo {
           font-size: 1.7rem;
         }
-        .nav-list li{
+
+        .nav-list li {
           font-size: 0.70rem;
           letter-spacing: 0.13rem;
         }
       }
 
       @media screen and (max-width: 630px) {
-        .nav-list li{
+        .nav-list li {
           margin-right: 0;
         }
-        .fieldset_ancla_servicios{
+
+        .fieldset_ancla_servicios {
           font-size: 0.75rem;
         }
       }
 
       @media screen and (max-width: 560px) {
-        .fieldset_ancla_servicios{
+        .fieldset_ancla_servicios {
+          width: 80%;
+          margin-top: 16px;
           margin-bottom: 16px;
           flex-direction: column;
           border: solid #000;
         }
-        .fieldset_contenido{
+
+        .fieldset_contenido {
           margin-top: 10px;
+          margin-left: 10px;
           font-size: 1.5rem;
           display: flex;
           pointer-events: auto;
         }
-        .fieldset_ancla_servicios ul{
-            display: block;
-            list-style-type:disc;
-            font-size: 14px;
+
+        .fieldset_ancla_servicios ul {
+          margin-left: 10px;
+          display: block;
+          list-style-type: disc;
+          font-size: 14px;
         }
-        .fieldset_ancla_servicios li{
+
+        .fieldset_ancla_servicios li {
           margin: 5px;
         }
       }
 
       @media screen and (max-width:426px) {
-        /*.container_index,
-        .container_servicios,
-        .container_propiedades,
-        .container_desarrollos,
-        .container_equipos{
-          width: 100%;
-          margin: 0;
-        }*/
-        header{
+        header {
           height: 64px;
         }
-        .logo{
+
+        .logo {
           text-align: left;
           float: left;
         }
-        .menu_button{
+
+        .menu_button {
           display: block;
           background: transparent;
           border-color: transparent;
           float: right;
           cursor: pointer;
         }
-        .nav{
+
+        .nav {
           position: relative;
           width: 100%;
           height: 0;
@@ -401,11 +409,13 @@
           justify-content: center;
           align-items: center;
         }
-        .nav.activo{
+
+        .nav.activo {
           height: 50vh;
           pointer-events: auto;
         }
-        .nav-list{
+
+        .nav-list {
           border: none;
           position: absolute;
           justify-content: center;
@@ -413,14 +423,47 @@
           width: 60%;
           height: 39%;
         }
-        .nav-list li{
+
+        .nav-list li {
           margin: 0.5rem 0;
           font-size: 0.93rem;
         }
-        .imagenes_index{
+
+        .imagenes_index {
           display: none;
         }
+
+        .container_index,
+        .container_servicios,
+        .container_propiedades,
+        .container_desarrollos,
+        .container_equipos {
+          margin: 0;
+          margin-left: 1.25rem;
+        }
+
+        .section_casa1,
+        .section_casa2,
+        .section_casa3 {
+          grid-row-gap: 0;
+          grid-template-areas:
+            'aside aside aside'
+            'article article article';
+        }
+
+        .section_desarrollos {
+          grid-template-areas:
+          'article article'
+          'img     img';
+        }
+
+        .section1,
+        .section2 {
+          text-align: center;
+          grid-template-columns: repeat(3, 1fr);
+          grid-template-rows: (2, auto);
+          grid-template-areas:
+          'team_img team_img team_img'
+          'team_text team_text team_text';
+        }
       }
-      
-
-
