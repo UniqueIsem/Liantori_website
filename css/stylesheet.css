@@ -135,13 +135,15 @@
       }
 
       .fieldset_ancla_servicios {
+        margin-bottom: 1rem;
         background-color: #b6b6b6;
         display: flex;
         justify-content: center;
+        grid-area: fieldset;
       }
 
       .fieldset_ancla_servicios ul {
-        padding: 0.4rem;
+        padding: 0.5rem;
         list-style-type: none;
         display: flex;
       }
@@ -170,9 +172,11 @@
       .fliping,
       .ventas,
       .rentas {
+        margin-bottom: 1.5rem;
         background-color: #fff;
         padding: 1.25rem;
         box-shadow: 0 0px 10px rgba(0, 0, 0, 0.448);
+        grid-area: article;
       }
 
       /*----PROPIEDADES------*/
@@ -217,7 +221,17 @@
       .aside_casa2,
       .aside_casa3 {
         background-color: gray;
+        /*max-height: 180px;*/
         grid-area: aside;
+      }
+
+      .aside_casa1 img,
+      .aside_casa2 img,
+      .aside_casa3 img {
+        height: auto;
+        background-size: cover; 
+        max-width: 100%;
+        max-height: 100%;
       }
 
       .article_casa1,
@@ -255,6 +269,13 @@
       .imagen_1 {
         background-color: gray;
         grid-area: img;
+      }
+
+      .imagen_1 img {
+        height: auto;
+        background-size: cover;
+        max-width: 100%;
+        max-height: 100%;
       }
 
       .article_seccion1 {
@@ -308,8 +329,17 @@
 
       .aside_tlahui,
       .aside_mada {
-        border-radius: 50%;
+        max-height: 9.37rem;
         grid-area: team_img;
+      }
+
+      .aside_tlahui img,
+      .aside_mada img {
+        border-radius: 50%;
+        height: auto;
+        background-size: cover;
+        max-width: 100%;
+        max-height: 100%;
       }
 
       .article_tlahui,
@@ -336,6 +366,25 @@
         .nav-list li {
           font-size: 0.70rem;
           letter-spacing: 0.13rem;
+        }
+      }
+
+      @media screen and (max-width: 660px) {
+        .section_casa1,
+        .section_casa2,
+        .section_casa3 {
+          grid-row-gap: 0;
+          grid-template-areas:
+            'aside aside aside'
+            'article article article';
+        }
+
+        .aside_casa1,
+        .aside_casa2,
+        .aside_casa3 {
+          max-height: 290px;
+          align-items: center;
+          text-align: center;
         }
       }
 
@@ -375,6 +424,15 @@
 
         .fieldset_ancla_servicios li {
           margin: 5px;
+        }
+        .section1,
+        .section2 {
+          text-align: center;
+          grid-template-columns: repeat(3, 1fr);
+          grid-template-rows: (2, auto);
+          grid-template-areas:
+          'team_img team_img team_img'
+          'team_text team_text team_text';
         }
       }
 
@@ -442,28 +500,9 @@
           margin-left: 1.25rem;
         }
 
-        .section_casa1,
-        .section_casa2,
-        .section_casa3 {
-          grid-row-gap: 0;
-          grid-template-areas:
-            'aside aside aside'
-            'article article article';
-        }
-
         .section_desarrollos {
           grid-template-areas:
           'article article'
           'img     img';
-        }
-
-        .section1,
-        .section2 {
-          text-align: center;
-          grid-template-columns: repeat(3, 1fr);
-          grid-template-rows: (2, auto);
-          grid-template-areas:
-          'team_img team_img team_img'
-          'team_text team_text team_text';
         }
       }
