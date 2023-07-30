@@ -10,61 +10,41 @@ button.addEventListener('click', () => {
     nav.classList.toggle('activo')
 })
 
-var imgCasa1 = ["casa1.jpg", "casa2.jpg", "casa3.jpg"];
-var imgCasa2 = ["casa1.jpg", "casa2.jpg", "casa3.jpg"];
-var imgCasa3 = ["casa1.jpg", "casa2.jpg", "casa3.jpg"];
-var contador1 = 0;
-var contador2 = 0;
-var contador3 = 0;
-var imagen
+let contador = 0;
 function proyector(casa, btn) {
-    switch(casa){
+    let imgCasa1 = ["casa1.jpeg", "casa2.jpg", "casa3.jpg"];
+    let imgCasa2 = ["casa1.jpeg", "casa2.jpg", "casa3.jpg"];
+    let imgCasa3 = ["casa1.jpeg", "casa2.jpg", "casa3.jpg"];
+    
+    let imagen;
+    let imgArray;
+
+    switch (casa) {
         case 'casa1':
-            imagen = document.getElementById("propiedad_img1")
-            if (btn == "siguiente") {
-                contador1++;
-                if (contador1 == imgCasa1.length) {
-                    contador1 = 0;
-                }
-            } else if (btn == "anterior") {
-                contador1--;
-                if (contador1 < 0) {
-                    contador1 = imgCasa1.length - 1;
-                }
-            }
-            const rutaImg = "../images/" + imgCasa1[contador1];
-            imagen.style.backgroundImage = 'url(${rutaImg})'
+            imagen = document.getElementById("propiedad_aside1");
+            contador = btn === "siguiente" ? ++contador : --contador;
+            imgArray = imgCasa1;
             break;
         case 'casa2':
-            imagen = document.getElementById("propiedad_img2")
-            if (btn == "siguiente") {
-                contador2++;
-                if (contador2 == imgCasa2.length) {
-                    contador2 = 0;
-                }
-            } else if (btn == "anterior") {
-                contador2--;
-                if (contador2 < 0) {
-                    contador2 = imgCasa2.length - 1;
-                }
-            }
-            imagen.src = "../images/" + imgCasa2[contador2];
+            console.log("ASIDE2");
+            imagen = document.getElementById("propiedad_aside2");
+            contador = btn === "siguiente" ? ++contador : --contador;
+            imgArray = imgCasa2;
             break;
         case 'casa3':
-            imagen = document.getElementById("propiedad_img3")
-            if (btn == "siguiente") {
-                contador3++;
-                if (contador3 == imgCasa3.length) {
-                    contador3 = 0;
-                    
-                }
-            } else if (btn == "anterior") {
-                contador3--;
-                if (contador3 < 0) {
-                    contador3 = imgCasa3.length - 1;
-                }
-            }
-            imagen.src = "../images/" + imgCasa3[contador3];
+            console.log("ASIDE3");
+            imagen = document.getElementById("propiedad_aside3");
+            contador = btn === "siguiente" ? ++contador : --contador;
+            imgArray = imgCasa3;
             break;
     }
+    
+    if (contador >= imgArray.length) {
+        contador = 0;
+    } else if (contador < 0) {
+        contador = imgArray.length - 1;
+    }
+
+    let rutaImg = "../images/" + imgArray[contador];
+    imagen.style.backgroundImage = "url(" + rutaImg + ")";
 }
