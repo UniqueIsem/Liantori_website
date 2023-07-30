@@ -9,7 +9,7 @@
         background-image: repeating-linear-gradient(90deg, #fff, #fff 20px, #fbfbfb 20px, #fbfbfb 40px);
         font-size: 16px;
         position: relative;
-        padding-bottom: 3em;
+        padding-bottom: 6.7em;
         min-height: 100vh;
       }
 
@@ -18,7 +18,6 @@
         color: #fff;
         padding: 1.25rem;
         text-align: center;
-        grid-area: header;
       }
 
       .logo {
@@ -70,35 +69,57 @@
         text-decoration: none;
       }
 
+      h1,
+      h2,
+      h3,
+      h4 {
+        margin-bottom: 0.62rem;
+      }
+
       .container_index,
       .container_servicios,
       .container_propiedades,
       .container_desarrollos,
       .container_equipos {
-        width: 90%;
+        width: 80%;
         max-width: 100rem;
         margin: 1.25em auto;
-        font-size: 1.56rem;
+        font-size: 1.4rem;
       }
 
       footer {
         background-color: #333;
-        color: #fff;
-        padding: 10px;
-        text-align: center;
+        padding: 16px;
         flex-shrink: 0;
-        grid-area: footer;
         position: absolute;
         bottom: 0;
         width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .footer-info {
+        color: #fff;
+        line-height: 1.56rem;
+      }
+
+      .footer-vertical-line {
+        border-left: 1px solid white;
+        height: 60px;
+        margin: 0 40px;
+      }
+
+      .icon-facebook,
+      .icon-instagram {
+        height: 1.5rem;
+        width: 1.5rem;
+        fill: white;
+        margin-top: 0.62rem;
+        margin-right: 1.8rem;
       }
 
       /*----------INDEX--------------*/
-      .container_index {
-        /*insertar grid-area cuando se
-        tengan los datos */
-      }
-
       .imagenes_index {
         background: gray;
         display: flex;
@@ -134,11 +155,6 @@
       }
 
       /*---------SERVICIOS---------*/
-      .container_servicios {
-        /*insertar grid-area cuando
-        se tengan los datos*/
-      }
-
       .fieldset_ancla_servicios {
         margin-bottom: 1rem;
         background-color: #b6b6b6;
@@ -168,6 +184,7 @@
       }
 
       .fieldset_contenido {
+        margin: 0;
         display: none;
         pointer-events: none;
       }
@@ -189,19 +206,19 @@
         display: grid;
         grid-row-gap: 1.25em;
         grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: (5, auto);
+        grid-template-rows: (3, auto);
         grid-template-areas:
-          'header header '
           'section1 section1'
           'section2 section2'
-          'section3 section3'
-          'footer footer';
+          'section3 section3';
       }
 
       .section_casa1,
       .section_casa2,
       .section_casa3 {
-        box-shadow: 0 0px 10px rgba(0, 0, 0, 0.448);
+        height: 40vh;
+        margin: 0 auto;
+        box-shadow: 0 0px 10px rgba(0, 0, 0, 0.5);
         display: grid;
         grid-row-gap: 10px;
         grid-template-columns: repeat(3, 1fr);
@@ -222,22 +239,63 @@
         grid-area: section3;
       }
 
+      .aside_casa1 {
+        background-image: url("../images/casa1.jpeg");
+      }
+
+      .aside_casa2 {
+        background-image: url("../images/casa2.jpg");
+      }
+
+      .aside_casa3 {
+        background-image: url("../images/casa3.jpg");
+      }
+
+      .btnAnterior {
+        font-family: serif;
+        font-size: 1.87rem;
+        float: left;
+        width: 25%;
+        height: 100%;
+        opacity: 0;
+        border: 0px;
+        color: white;
+        transition: 0.5s ease;
+      }
+
+      .btnAnterior:hover {
+        opacity: 100%;
+        background: linear-gradient(-90deg, transparent, black);
+        cursor: pointer;
+      }
+
+      .btnSiguiente {
+        font-family: serif;
+        font-size: 1.87rem;
+        float: right;
+        width: 25%;
+        height: 100%;
+        opacity: 0;
+        border: 0px;
+        color: white;
+        transition: 0.5s ease;
+      }
+
+      .btnSiguiente:hover {
+        opacity: 100%;
+        background: linear-gradient(90deg, transparent, black);
+        cursor: pointer;
+      }
+
       .aside_casa1,
       .aside_casa2,
       .aside_casa3 {
-        background-color: gray;
-        grid-area: aside;
-      }
-
-      .aside_casa1 img,
-      .aside_casa2 img,
-      .aside_casa3 img {
-        height: auto;
-        background-size: cover; 
+        /*height: auto*/
+        background-size: cover;
         display: block;
         width: 100%;
         height: 100%;
-        max-height: 35vh;
+        grid-area: aside;
       }
 
       .article_casa1,
@@ -253,12 +311,10 @@
         display: grid;
         grid-gap: 1.25rem;
         grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: (4, auto);
+        grid-template-rows: (2, auto);
         grid-template-areas:
-          'header header'
           'section section'
-          'main main'
-          'footer footer';
+          'main main';
       }
 
       .section_desarrollos {
@@ -304,12 +360,10 @@
         display: grid;
         grid-gap: 1.25em;
         grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: (4, auto);
+        grid-template-rows: (2, auto);
         grid-template-areas:
-          'header header'
           'section1 section1'
-          'section2 section2'
-          'footer footer';
+          'section2 section2';
       }
 
       .section1 {
@@ -374,12 +428,34 @@
           font-size: 0.75rem;
           letter-spacing: 0.13rem;
         }
-      }
 
-      @media screen and (max-width: 660px) {
+        .container_propiedades {
+          font-size: 1.3rem;
+        }
+
         .section_casa1,
         .section_casa2,
         .section_casa3 {
+          display: block;
+          margin-bottom: 18.75rem;
+          box-shadow: 0 0px 10px rgba(0, 0, 0, 0.448);
+        }
+
+        .aside_casa1,
+        .aside_casa2,
+        .aside_casa3 {
+          height: 60vh;
+          object-fit: contain;
+        }
+
+      }
+
+      @media screen and (max-width: 660px) {
+
+        .section_casa1,
+        .section_casa2,
+        .section_casa3 {
+          font-size: 1.25rem;
           grid-row-gap: 0;
           grid-template-areas:
             'aside aside aside'
@@ -389,7 +465,6 @@
         .aside_casa1,
         .aside_casa2,
         .aside_casa3 {
-          max-height: 290px;
           align-items: center;
           text-align: center;
         }
@@ -406,6 +481,18 @@
 
         .fieldset_ancla_servicios {
           font-size: 1rem;
+        }
+
+        .section_casa1,
+        .section_casa2,
+        .section_casa3 {
+          margin-bottom: 240px;
+        }
+
+        .aside_casa1,
+        .aside_casa2,
+        .aside_casa3 {
+          height: 50vh;
         }
       }
 
@@ -436,14 +523,31 @@
         .fieldset_ancla_servicios li {
           margin: 5px;
         }
+
         .section1,
         .section2 {
           text-align: center;
           grid-template-columns: repeat(3, 1fr);
           grid-template-rows: (2, auto);
           grid-template-areas:
-          'team_img team_img team_img'
-          'team_text team_text team_text';
+            'team_img team_img team_img'
+            'team_text team_text team_text';
+        }
+
+        .section_casa1,
+        .section_casa2,
+        .section_casa3 {
+          margin-bottom: 13.5rem;
+        }
+
+        .aside_casa1,
+        .aside_casa2,
+        .aside_casa3 {
+          height: 45vh;
+        }
+
+        .container_desarrollos {
+          font-size: 1.2rem;
         }
       }
 
@@ -502,6 +606,19 @@
           display: none;
         }
 
+        .section_casa1,
+        .section_casa2,
+        .section_casa3 {
+          font-size: 1.2rem;
+          margin-bottom: 7rem;
+        }
+
+        .aside_casa1,
+        .aside_casa2,
+        .aside_casa3 {
+          height: 25vh;
+        }
+
         .container_index,
         .container_servicios,
         .container_propiedades,
@@ -511,9 +628,82 @@
           margin-left: 1.25rem;
         }
 
+        .container_propiedades {
+          margin-top: 1rem;
+        }
+
         .section_desarrollos {
+          margin-top: 1rem;
           grid-template-areas:
-          'article article'
-          'img     img';
+            'article article'
+            'img     img';
+        }
+
+        .main_desarrollos {
+          margin-bottom: 1rem;
+        }
+
+        .footer-info {
+          font-size: 0.8rem;
+        }
+
+        .social-media {
+          display: flex;
+        }
+
+        .footer-vertical-line {
+          margin-left: 30px;
+          margin-right: 20px;
+        }
+
+        .icon-instagram {
+          margin-right: 0;
+        }
+      }
+
+      @media screen and (max-width: 376px) {
+        .section_casa1,
+        .section_casa2,
+        .section_casa3 {
+          margin-bottom: 9.5rem;
+        }
+
+        .main_desarrollos {
+          margin-bottom: 2.5rem;
+        }
+      }
+
+      @media screen and (max-width: 280px) {
+        .container_index,
+        .container_servicios,
+        .container_propiedades {
+          margin-bottom: 2.5rem;
+        }
+
+        .container_propiedades {
+          margin-top: 1rem;
+        }
+
+        .section_casa1,
+        .section_casa2,
+        .section_casa3 {
+          font-size: 1.1rem;
+        }
+        
+        .social-media {
+          display: block;
+        }
+
+        .icon-facebook {
+          margin: 0;
+        }
+        
+        .footer-vertical-line {
+          margin: 5px;
+        }
+
+        .icon-mail {
+          height: 0.8rem;
+          width: 0.8rem;
         }
       }
