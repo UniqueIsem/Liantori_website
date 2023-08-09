@@ -216,7 +216,8 @@
       .section_casa1,
       .section_casa2,
       .section_casa3 {
-        height: 40vh;
+        height: 41vh;
+        width: 100%;
         margin: 0 auto;
         box-shadow: 0 0px 10px rgba(0, 0, 0, 0.5);
         display: grid;
@@ -301,9 +302,28 @@
       .article_casa1,
       .article_casa2,
       .article_casa3 {
-        background-color: #fff;
         padding: 1.25rem;
+        background-color: #fff;
         grid-area: article;
+      }
+
+      .ubicacion_propiedad,
+      .dimensiones_propiedad,
+      .caracteristicas_propiedad {
+        margin: 10px;
+      }
+      
+      .elementos_propiedad {
+        font-size: 1rem;
+        margin-right: 20px;
+        line-height: 20px;
+        padding: 2px 8px 0;
+        border-radius: 23px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        box-sizing: border-box;
+        border: 1px solid rgb(58, 12, 61);
       }
 
       /*--------------DESARROLLOS-----------------*/
@@ -437,7 +457,7 @@
         .section_casa2,
         .section_casa3 {
           display: block;
-          margin-bottom: 18.75rem;
+          margin-bottom: 27rem;
           box-shadow: 0 0px 10px rgba(0, 0, 0, 0.448);
         }
 
@@ -451,7 +471,6 @@
       }
 
       @media screen and (max-width: 660px) {
-
         .section_casa1,
         .section_casa2,
         .section_casa3 {
@@ -486,7 +505,7 @@
         .section_casa1,
         .section_casa2,
         .section_casa3 {
-          margin-bottom: 240px;
+          margin-bottom: 22rem;
         }
 
         .aside_casa1,
@@ -537,7 +556,12 @@
         .section_casa1,
         .section_casa2,
         .section_casa3 {
-          margin-bottom: 13.5rem;
+          margin-bottom: 21rem;
+        }
+
+        .elementos_propiedad {
+          font-size: 0.9rem;
+          margin-right: 15px;
         }
 
         .aside_casa1,
@@ -610,7 +634,7 @@
         .section_casa2,
         .section_casa3 {
           font-size: 1.2rem;
-          margin-bottom: 7rem;
+          margin-bottom: 13rem;
         }
 
         .aside_casa1,
@@ -659,17 +683,40 @@
         .icon-instagram {
           margin-right: 0;
         }
+
+        .titulo_propiedad,
+        .informacion_propiedad p,
+        .dimensiones_propiedad span{
+          font-size: 1rem;
+        }
+
+        .precio_propiedad span {
+          font-size: 1.8rem;
+        }
+
+        .elementos_propiedad {
+          font-size: 0.7rem;
+          margin-right: 10px;
+        }
       }
 
       @media screen and (max-width: 376px) {
         .section_casa1,
         .section_casa2,
         .section_casa3 {
-          margin-bottom: 9.5rem;
+          margin-bottom: 15rem;
         }
 
         .main_desarrollos {
           margin-bottom: 2.5rem;
+        }
+      }
+
+      @media screen and (max-width: 345px) {
+        .section_casa1,
+        .section_casa2,
+        .section_casa3 {
+          margin-bottom: 18rem;
         }
       }
 
