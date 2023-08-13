@@ -117,6 +117,20 @@
         fill: white;
         margin-top: 0.62rem;
         margin-right: 1.8rem;
+        transition: 0.2s;
+      }
+
+      .icon-facebook:hover {
+        fill: #037df0;
+      }
+
+      .icon-instagram:hover {
+        fill: #de0064;
+      }
+
+      :is(.icon-facebook, .icon-instagram):hover {
+        height: 1.7rem;
+        width: 1.7rem;
       }
 
       /*----------INDEX--------------*/
@@ -216,12 +230,9 @@
       .section_casa1,
       .section_casa2,
       .section_casa3 {
-        height: 41vh;
         width: 100%;
-        margin: 0 auto;
         box-shadow: 0 0px 10px rgba(0, 0, 0, 0.5);
         display: grid;
-        grid-row-gap: 10px;
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: (1, auto);
         grid-template-areas:
@@ -291,7 +302,6 @@
       .aside_casa1,
       .aside_casa2,
       .aside_casa3 {
-        /*height: auto*/
         background-size: cover;
         display: block;
         width: 100%;
@@ -307,15 +317,27 @@
         grid-area: article;
       }
 
-      .ubicacion_propiedad,
+      .ubicacion_propiedad {
+        margin-top: 10px;
+      }
+      
       .dimensiones_propiedad,
       .caracteristicas_propiedad {
         margin: 10px;
+        flex-wrap: wrap;
+        display: flex;
+      }
+
+      .dimensiones {
+        display: flex;
+        flex-direction: row;
+        margin-right: 20px;
       }
       
       .elementos_propiedad {
         font-size: 1rem;
         margin-right: 20px;
+        margin-bottom: 3px;
         line-height: 20px;
         padding: 2px 8px 0;
         border-radius: 23px;
@@ -327,7 +349,7 @@
       }
 
       /*--------------DESARROLLOS-----------------*/
-      .container_desarrollos {
+      /*.container_desarrollos {
         display: grid;
         grid-gap: 1.25rem;
         grid-template-columns: repeat(2, 1fr);
@@ -373,7 +395,7 @@
         background-color: #fff;
         box-shadow: 0 0px 10px rgba(0, 0, 0, 0.448);
         grid-area: main;
-      }
+      }*/
 
       /*-----------------EQUIPOS----------------*/
       /*.container_equipos {
@@ -456,9 +478,9 @@
         .section_casa1,
         .section_casa2,
         .section_casa3 {
+          height: auto;
           display: block;
-          margin-bottom: 27rem;
-          box-shadow: 0 0px 10px rgba(0, 0, 0, 0.448);
+          box-shadow: 0 0px 10px rgba(0, 0, 0, 0.5);
         }
 
         .aside_casa1,
@@ -467,7 +489,6 @@
           height: 60vh;
           object-fit: contain;
         }
-
       }
 
       @media screen and (max-width: 660px) {
@@ -500,12 +521,6 @@
 
         .fieldset_ancla_servicios {
           font-size: 1rem;
-        }
-
-        .section_casa1,
-        .section_casa2,
-        .section_casa3 {
-          margin-bottom: 22rem;
         }
 
         .aside_casa1,
@@ -553,12 +568,6 @@
             'team_text team_text team_text';
         }
 
-        .section_casa1,
-        .section_casa2,
-        .section_casa3 {
-          margin-bottom: 21rem;
-        }
-
         .elementos_propiedad {
           font-size: 0.9rem;
           margin-right: 15px;
@@ -600,7 +609,6 @@
           pointer-events: none;
           overflow: hidden;
           transition: all .5s ease;
-
           display: flex;
           flex-flow: column nowrap;
           justify-content: center;
@@ -608,8 +616,9 @@
         }
 
         .nav.activo {
-          height: 40vh;
+          height: 30vh;
           pointer-events: auto;
+          z-index: 1;
         }
 
         .nav-list {
@@ -630,11 +639,14 @@
           display: none;
         }
 
+        .main_index {
+          transform: translateX(20px);
+        }
+
         .section_casa1,
         .section_casa2,
         .section_casa3 {
           font-size: 1.2rem;
-          margin-bottom: 13rem;
         }
 
         .aside_casa1,
@@ -701,24 +713,19 @@
       }
 
       @media screen and (max-width: 376px) {
-        .section_casa1,
-        .section_casa2,
-        .section_casa3 {
-          margin-bottom: 15rem;
+        .main_index {
+          transform: translateX(10px);
         }
 
+        .main_index :where(h2, p) {
+          font-size: 1.27rem;
+        }
+        
         .main_desarrollos {
           margin-bottom: 2.5rem;
         }
       }
 
-      @media screen and (max-width: 345px) {
-        .section_casa1,
-        .section_casa2,
-        .section_casa3 {
-          margin-bottom: 18rem;
-        }
-      }
 
       @media screen and (max-width: 280px) {
         .container_index,
