@@ -203,16 +203,28 @@
         pointer-events: none;
       }
 
-      .administracion,
-      .desarrollos,
-      .fliping,
-      .ventas,
-      .rentas {
+      .service-container {
+        display: flex;
         margin-bottom: 1.5rem;
         background-color: #fff;
-        padding: 1.25rem;
         box-shadow: 0 0px 10px rgba(0, 0, 0, 0.448);
-        grid-area: article;
+      }
+
+      .service-text {
+        width: 70%;
+        padding: 1.5rem;
+        padding-right: 3rem;
+        text-align: center;
+        font-size: 1.8rem;
+        display: grid;
+        place-items: center;
+      }
+
+      .service-img {
+        padding: 0.2rem;
+        object-fit: cover;
+        height: 100%;
+        width: 30%;
       }
 
       /*----PROPIEDADES------*/
@@ -320,7 +332,7 @@
       .ubicacion_propiedad {
         margin-top: 10px;
       }
-      
+
       .dimensiones_propiedad,
       .caracteristicas_propiedad {
         margin: 10px;
@@ -333,7 +345,7 @@
         flex-direction: row;
         margin-right: 20px;
       }
-      
+
       .elementos_propiedad {
         font-size: 1rem;
         margin-right: 20px;
@@ -459,6 +471,15 @@
         .imagenes_index {
           height: 10rem;
         }
+
+        .service-container {
+          flex-direction: column;
+        }
+
+        .service-text,
+        .service-img {
+          width: 100%;
+        }
       }
 
       @media screen and (max-width: 768px) {
@@ -492,6 +513,7 @@
       }
 
       @media screen and (max-width: 660px) {
+
         .section_casa1,
         .section_casa2,
         .section_casa3 {
@@ -520,7 +542,26 @@
         }
 
         .fieldset_ancla_servicios {
+          flex-direction: column;
+          text-align: center;
+          border: solid #000;
+          border-radius: 10px;
+        }
+
+        .fieldset_contenido {
+          margin: auto;
+          font-size: 2rem;
+          display: block;
+          pointer-events: auto;
+        }
+
+        .fieldset_ancla_servicios ul {
+          display: block;
           font-size: 1rem;
+        }
+
+        .fieldset_ancla_servicios li {
+          margin: 5px;
         }
 
         .aside_casa1,
@@ -531,33 +572,6 @@
       }
 
       @media screen and (max-width: 560px) {
-        .fieldset_ancla_servicios {
-          width: 80%;
-          margin-top: 16px;
-          margin-bottom: 16px;
-          flex-direction: column;
-          border: solid #000;
-        }
-
-        .fieldset_contenido {
-          margin-top: 10px;
-          margin-left: 10px;
-          font-size: 1.5rem;
-          display: flex;
-          pointer-events: auto;
-        }
-
-        .fieldset_ancla_servicios ul {
-          margin-left: 10px;
-          display: block;
-          list-style-type: disc;
-          font-size: 14px;
-        }
-
-        .fieldset_ancla_servicios li {
-          margin: 5px;
-        }
-
         .section1,
         .section2 {
           text-align: center;
@@ -698,7 +712,7 @@
 
         .titulo_propiedad,
         .informacion_propiedad p,
-        .dimensiones_propiedad span{
+        .dimensiones_propiedad span {
           font-size: 1rem;
         }
 
@@ -720,7 +734,7 @@
         .main_index :where(h2, p) {
           font-size: 1.27rem;
         }
-        
+
         .main_desarrollos {
           margin-bottom: 2.5rem;
         }
@@ -728,6 +742,7 @@
 
 
       @media screen and (max-width: 280px) {
+
         .container_index,
         .container_servicios,
         .container_propiedades {
@@ -743,7 +758,7 @@
         .section_casa3 {
           font-size: 1.1rem;
         }
-        
+
         .social-media {
           display: block;
         }
@@ -751,7 +766,7 @@
         .icon-facebook {
           margin: 0;
         }
-        
+
         .footer-vertical-line {
           margin: 5px;
         }
