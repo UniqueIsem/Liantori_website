@@ -80,7 +80,8 @@
       .container_servicios,
       .container_propiedades,
       .container_desarrollos,
-      .container_equipos {
+      .container_equipos,
+      .container_condiciones {
         width: 80%;
         max-width: 100rem;
         margin: 1.25em auto;
@@ -475,6 +476,17 @@
         grid-area: team_text;
       }*/
 
+      /*CONDICIONES GENERALES*/
+      .condiciones_title {
+        text-align: center;
+      }
+
+      .condiciones_content {
+        background-color: #ffffff;
+        box-shadow: 0 0px 10px rgba(0, 0, 0, 0.448);
+        padding: 1.5rem;
+      }
+
       /*-----------RESPONSIVE-------------*/
       @media screen and (max-width: 900px) {
         .nav-list li {
@@ -597,6 +609,7 @@
       }
 
       @media screen and (max-width: 560px) {
+
         .section1,
         .section2 {
           text-align: center;
